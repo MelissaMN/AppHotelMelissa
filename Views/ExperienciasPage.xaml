@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppHotelMelissa.Views.ExperienciasPage"
+             Title="Experiências" BackgroundColor="#89a52a">
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="22,24">
+            <VerticalStackLayout Spacing="6">
+                <Label Text="DESCUBRA O SERENA" FontSize="10" TextColor="#B56D52" FontAttributes="Bold" CharacterSpacing="2" />
+                <Label Text="Experiências para\nrenovar suas energias" FontSize="28" TextColor="#173B3A" FontAttributes="Bold" LineHeight="1.05" />
+                <Label Text="Pequenos momentos que tornam a viagem especial." FontSize="13" TextColor="#71817D" />
+            </VerticalStackLayout>
+
+            <Border BackgroundColor="#173B3A" StrokeThickness="0" StrokeShape="RoundRectangle 20" Padding="0">
+                <Grid RowDefinitions="150,Auto" RowSpacing="0">
+                    <Grid BackgroundColor="#ea9a07">
+                        <Label Text="☼" FontSize="86" TextColor="#124a48" HorizontalOptions="Center" VerticalOptions="Center" />
+                        <Border BackgroundColor="#102D2C" StrokeThickness="0" Padding="10,5" Margin="12" HorizontalOptions="Start" VerticalOptions="Start" StrokeShape="RoundRectangle 10">
+                            <Label Text="BEM-ESTAR" FontSize="9" TextColor="#FFFFFF" CharacterSpacing="1.5" FontAttributes="Bold" />
+                        </Border>
+                    </Grid>
+                    <VerticalStackLayout Grid.Row="1" Padding="17" Spacing="5">
+                        <Label Text="Spa e relaxamento" FontSize="19" TextColor="White" FontAttributes="Bold" />
+                        <Label Text="Um convite para desacelerar, descansar e cuidar de você." FontSize="12" TextColor="#E0E8E3" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                <Border BackgroundColor="White" Stroke="#E8E2D7" StrokeThickness="1" Padding="14" StrokeShape="RoundRectangle 18">
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="♧" FontSize="34" TextColor="#B56D52" />
+                        <Label Text="Trilhas verdes" FontSize="16" TextColor="#173B3A" FontAttributes="Bold" />
+                        <Label Text="Caminhos tranquilos em contato com a natureza." FontSize="11" TextColor="#71817D" />
+                    </VerticalStackLayout>
+                </Border>
+                <Border Grid.Column="1" BackgroundColor="White" Stroke="#E8E2D7" StrokeThickness="1" Padding="14" StrokeShape="RoundRectangle 18">
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="☕" FontSize="34" TextColor="#B56D52" />
+                        <Label Text="Café especial" FontSize="16" TextColor="#173B3A" FontAttributes="Bold" />
+                        <Label Text="Sabores acolhedores para começar bem o dia." FontSize="11" TextColor="#71817D" />
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+
+            <Border BackgroundColor="#EFE3D7" StrokeThickness="0" Padding="16" StrokeShape="RoundRectangle 16">
+                <VerticalStackLayout Spacing="5">
+                    <Label Text="SUA PRÓXIMA PAUSA COMEÇA AQUI" FontSize="9" TextColor="#9A5B45" FontAttributes="Bold" CharacterSpacing="1.2" />
+                    <Label Text="Escolha suas datas na tela inicial e planeje uma estadia do seu jeito." FontSize="13" TextColor="#465653" />
+                </VerticalStackLayout>
+            </Border>
+            <Button Text="← Voltar para a reserva" BackgroundColor="#173B3A" TextColor="White" Clicked="OnVoltarClicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

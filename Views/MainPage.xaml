@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:Class="AppHotelMelissa.Views.MainPage"
+             Title="Serena Hotel" BackgroundColor="#F5F1E8">
+    <ScrollView>
+        <VerticalStackLayout Spacing="0">
+            <Grid HeightRequest="245" Padding="26,24" BackgroundColor="#3c9c99">
+                <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+                <HorizontalStackLayout Spacing="9" VerticalOptions="Start">
+                    <Label Text="✦" TextColor="#D8B779" FontSize="24" />
+                    <Label Text="SERENA" TextColor="White" FontSize="18" FontAttributes="Bold" CharacterSpacing="3" />
+                    <Label Text="HOTEL &amp; SPA" TextColor="#D8B779" FontSize="9" VerticalOptions="Center" CharacterSpacing="2" />
+                </HorizontalStackLayout>
+                <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" Spacing="5">
+                    <Label Text="Sua pausa, com mais encanto." TextColor="White" FontSize="31" FontAttributes="Bold" LineHeight="1.05" />
+                    <Label Text="Conforto, natureza e momentos inesquecíveis." TextColor="#D8E1DC" FontSize="12" />
+                </VerticalStackLayout>
+                <Label Grid.Row="2" Text="HOSPEDAGEM • BEM-ESTAR • EXPERIÊNCIAS" TextColor="#D8B779" FontSize="9" CharacterSpacing="1.5" />
+            </Grid>
+
+            <VerticalStackLayout Padding="22,24" Spacing="18">
+                <VerticalStackLayout Spacing="4">
+                    <Label Text="PLANEJE SUA ESTADIA" TextColor="#A17E43" FontSize="10" FontAttributes="Bold" CharacterSpacing="2" />
+                    <Label Text="Faça sua reserva" FontSize="25" FontAttributes="Bold" TextColor="#173B3A" />
+                    <Label Text="Escolha os detalhes da sua próxima experiência." FontSize="12" TextColor="#71817D" />
+                </VerticalStackLayout>
+
+                <Border BackgroundColor="White" Stroke="#f1b545" StrokeThickness="1" Padding="17" StrokeShape="RoundRectangle 18">
+                    <VerticalStackLayout Spacing="15">
+                        <VerticalStackLayout Spacing="6">
+                            <Label Text="TIPO DE ACOMODAÇÃO" FontSize="10" FontAttributes="Bold" TextColor="#71817D" CharacterSpacing="1" />
+                            <Picker Title="Selecione sua suíte" ItemsSource="{Binding TiposQuarto}" SelectedItem="{Binding TipoQuarto, Mode=TwoWay}" TextColor="#263635" BackgroundColor="#F5F1E8" />
+                        </VerticalStackLayout>
+                        <BoxView HeightRequest="1" Color="#EEEAE2" />
+                        <VerticalStackLayout Spacing="6">
+                            <Label Text="DATA DE CHECK-IN" FontSize="10" FontAttributes="Bold" TextColor="#71817D" CharacterSpacing="1" />
+                            <DatePicker Date="{Binding CheckIn, Mode=TwoWay}" MinimumDate="{x:Static sys:DateTime.Today}" Format="dddd, dd 'de' MMMM 'de' yyyy" />
+                        </VerticalStackLayout>
+                        <BoxView HeightRequest="1" Color="#EEEAE2" />
+                        <VerticalStackLayout Spacing="8">
+                            <Label Text="NÚMERO DE HÓSPEDES" FontSize="10" FontAttributes="Bold" TextColor="#71817D" CharacterSpacing="1" />
+                            <Grid ColumnDefinitions="*,Auto" VerticalOptions="Center">
+                                <Label Text="Adultos e crianças" FontSize="13" VerticalOptions="Center" />
+                                <HorizontalStackLayout Grid.Column="1" Spacing="12" VerticalOptions="Center">
+                                    <Stepper Minimum="1" Maximum="8" Increment="1" Value="{Binding Hospedes, Mode=TwoWay}" />
+                                    <Label Text="{Binding Hospedes}" FontSize="16" FontAttributes="Bold" TextColor="#173B3A" VerticalOptions="Center" WidthRequest="20" />
+                                </HorizontalStackLayout>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border BackgroundColor="#EDE8DC" StrokeThickness="0" Padding="15" StrokeShape="RoundRectangle 14">
+                    <VerticalStackLayout Spacing="5">
+                        <Label Text="RESUMO DA SUA ESCOLHA" FontSize="9" TextColor="#8B744F" FontAttributes="Bold" CharacterSpacing="1.2" />
+                        <Label Text="{Binding Resumo}" FontSize="13" TextColor="#263635" FontAttributes="Bold" />
+                    </VerticalStackLayout>
+                </Border>
+                <Button Text="Solicitar reserva  →" BackgroundColor="#173B3A" TextColor="White" Clicked="OnReservarClicked" />
+                <Button Text="Explore nossas experiências" BackgroundColor="#B56D52" TextColor="White" Clicked="OnExperienciasClicked" />
+                <Button Text="Conheça o Serena · Sobre" BackgroundColor="Transparent" BorderColor="#D8B779" BorderWidth="1" TextColor="#173B3A" Clicked="OnSobreClicked" />
+                <Label Text="* Protótipo acadêmico para demonstração de componentes de interface." FontSize="10" TextColor="#8A9691" HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
